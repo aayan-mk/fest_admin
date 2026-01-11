@@ -1,0 +1,111 @@
+.animated-person {
+  width: 90px;
+  height: 120px;
+  margin: 0 auto 18px auto;
+  position: relative;
+  transition: filter 0.2s;
+}
+.animated-person .head {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+  border-radius: 50%;
+  position: absolute;
+  left: 15px;
+  top: 0;
+  z-index: 2;
+  box-shadow: 0 2px 12px #6366f133;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.animated-person .face {
+  position: absolute;
+  left: 13px;
+  top: 18px;
+  width: 34px;
+  height: 28px;
+}
+.animated-person .eye {
+  width: 7px;
+  height: 7px;
+  background: #232946;
+  border-radius: 50%;
+  position: absolute;
+  top: 7px;
+  transition: left 0.2s, top 0.2s;
+}
+.animated-person .eye.left { left: 4px; }
+.animated-person .eye.right { right: 4px; }
+.animated-person.email .eye.left { left: 1px; }
+.animated-person.email .eye.right { right: 1px; }
+.animated-person.password .eye.left,
+.animated-person.password .eye.right {
+  top: 13px;
+  background: #6366f1;
+}
+.animated-person.otp .eye.left,
+.animated-person.otp .eye.right {
+  width: 10px;
+  height: 10px;
+  top: 4px;
+  background: #f472b6;
+}
+.animated-person .mouth {
+  width: 14px;
+  height: 6px;
+  border-radius: 0 0 8px 8px;
+  background: #232946;
+  position: absolute;
+  left: 10px;
+  top: 18px;
+  transition: background 0.2s;
+}
+.animated-person.email .mouth {
+  background: #f472b6;
+}
+.animated-person.password .mouth {
+  background: #6366f1;
+}
+.animated-person.otp .mouth {
+  width: 10px;
+  height: 10px;
+  left: 12px;
+  top: 16px;
+  border-radius: 50%;
+  background: #f472b6;
+}
+.animated-person .hand {
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+  border-radius: 50%;
+  position: absolute;
+  top: 38px;
+  z-index: 3;
+  transition: left 0.2s, right 0.2s, top 0.2s, opacity 0.2s;
+  opacity: 0.7;
+}
+.animated-person .hand.left { left: -10px; }
+.animated-person .hand.right { right: -10px; }
+.animated-person.password .hand.left {
+  left: 2px;
+  top: 24px;
+  opacity: 1;
+}
+.animated-person.password .hand.right {
+  right: 2px;
+  top: 24px;
+  opacity: 1;
+}
+.animated-person .body {
+  width: 32px;
+  height: 44px;
+  background: linear-gradient(135deg, #6366f1 0%, #f472b6 100%);
+  border-radius: 16px 16px 18px 18px;
+  position: absolute;
+  left: 29px;
+  top: 60px;
+  z-index: 1;
+  box-shadow: 0 2px 12px #6366f133;
+}

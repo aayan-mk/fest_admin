@@ -1,0 +1,136 @@
+/* Animated, modern form for CreateEvent - styled like CreateContingent */
+.create-event-container {
+  max-width: 900px;
+  min-width: 340px;
+  margin: 56px auto;
+  padding: 4.5rem 4rem 3.5rem 4rem;
+  background: linear-gradient(120deg, #e0e7ff 60%, #f0fdfa 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(80,120,255,0.10);
+  animation: fadeInEvent 0.7s cubic-bezier(.2,.9,.2,1);
+}
+@keyframes fadeInEvent {
+  from { opacity: 0; transform: translateY(32px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.create-event-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2d3a5a;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+.create-event-container form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.2rem 2.5rem;
+  align-items: start;
+}
+.create-event-container form > div {
+  margin-bottom: 0;
+}
+.create-event-container label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #2d3a5a;
+  letter-spacing: 0.1px;
+}
+.create-event-container input,
+.create-event-container textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1.5px solid #b6c6e6;
+  border-radius: 7px;
+  font-size: 1rem;
+  background: #f8fafc;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 8px rgba(80,120,255,0.03);
+}
+.create-event-container input:focus,
+.create-event-container textarea:focus {
+  border-color: #6366f1;
+  box-shadow: 0 2px 16px #6366f133;
+  outline: none;
+}
+.create-event-container .error {
+  grid-column: 1 / -1;
+  color: #d32f2f;
+  background: #ffeaea;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  text-align: center;
+  animation: shakeEvent 0.3s;
+}
+@keyframes shakeEvent {
+  10%, 90% { transform: translateX(-1px); }
+  20%, 80% { transform: translateX(2px); }
+  30%, 50%, 70% { transform: translateX(-4px); }
+  40%, 60% { transform: translateX(4px); }
+}
+.create-event-container button[type="submit"] {
+  grid-column: 1 / -1;
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(90deg, #007bff 60%, #0056b3 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7em;
+}
+.create-event-container button[type="submit"]:hover:not(:disabled) {
+  background: linear-gradient(90deg, #0056b3 60%, #007bff 100%);
+  transform: translateY(-2px) scale(1.04);
+}
+@media (max-width: 900px) {
+  .create-event-container form {
+    grid-template-columns: 1fr;
+    gap: 1.2rem 0;
+  }
+}
+@media (max-width: 700px) {
+  .create-event-container {
+    padding: 1.2rem 0.2rem;
+    max-width: 100vw;
+  }
+}
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .create-event-container {
+    background: linear-gradient(120deg, #232946 60%, #1a1a2e 100%);
+    box-shadow: 0 4px 32px rgba(80,120,255,0.18);
+  }
+  .create-event-container label {
+    color: #e0e7ff;
+  }
+  .create-event-container input,
+  .create-event-container textarea {
+    color: #e0e7ff;
+    background: #232946;
+    border-color: #6366f1;
+    box-shadow: 0 2px 16px #6366f133;
+    caret-color: #60a5fa;
+  }
+  .create-event-container input::placeholder,
+  .create-event-container textarea::placeholder {
+    color: #b6c6e6;
+    opacity: 1;
+  }
+  .create-event-container h2 {
+    color: #e0e7ff;
+    text-shadow: 0 2px 12px #1a1a2e, 0 1px 0 #232946;
+  }
+  .create-event-container .error {
+    background: #2d1a1a;
+    color: #ffb4b4;
+  }
+}
