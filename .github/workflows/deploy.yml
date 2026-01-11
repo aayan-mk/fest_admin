@@ -1,0 +1,51 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install backend dependencies
+        run: |
+          cd fest-backend
+          npm install
+
+      - name: Install frontend dependencies
+        run: |
+          cd fest-frontend
+          npm install
+
+      - name: Build frontend
+        run: |
+          cd fest-frontend
+          npm run build
+
+      # Add backend tests here if you have any
+      # - name: Run backend tests
+      #   run: |
+      #     cd fest-backend
+      #     npm test
+
+      # Add frontend tests here if you have any
+      # - name: Run frontend tests
+      #   run: |
+      #     cd fest-frontend
+      #     npm test
+
+  # Optional: Deploy job (see below)
+
+  
